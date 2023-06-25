@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Dependencies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The component uses the following dependencies:
 
-## Available Scripts
+    React and useState from the react library.
+    useEffect from the react library to handle side effects.
+    Card, CardHeader, CardBody, CardFooter, Box, Text, Heading, and Link components from the @chakra-ui/react library.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   1. The component initializes a state variable count and sets it to 1 using the useState hook.
 
-### `npm test`
+    2. It also initializes an empty array data using another useState hook.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   3. The useEffect hook is used to fetch data from the Hacker News API. It runs whenever the count state variable changes. The API URL includes the current count value in the request.
 
-### `npm run build`
+   4. Inside the useEffect hook, the API response is converted to JSON using resp.json(). The data from the response is then added to the existing data state array using the spread operator ([...prevData, ...data.hits]).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   5. The setInterval function is used to increment the count value by 1 every 10 seconds.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  6.  The component renders a Box component that contains a list of Card components.
 
-### `npm run eject`
+  7.  The Card components represent individual stories and display the story title, URL, creation date, and author.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  8.  The story data is mapped over using the data.map function to generate the list of Card components.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    9. The CardHeader contains a Heading component with the story title.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   10. The CardBody contains a Link component that displays the story URL.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   11. The CardFooter contains a Text component displaying the creation date.
 
-## Learn More
+   12. The author name is displayed using a Text component with the color prop set to "red".
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
