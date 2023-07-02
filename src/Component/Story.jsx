@@ -31,6 +31,7 @@ const Story = () => {
 
   return (
     <Box>
+      <h2> Number of Pages:{count}</h2> 
       {data.length > 0 && (
         <>
           {data.map((ele) => (
